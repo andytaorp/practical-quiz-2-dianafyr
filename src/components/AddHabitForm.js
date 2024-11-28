@@ -7,8 +7,16 @@ export default function AddHabitForm({ onAddHabit }) {
     // TODO: write code to handle form submission
     e.preventDefault();
     if (habitName.trim() ==="")return;
-    onAddHabit(habitName.trim());
   };
+
+  const newHabit = {
+    id: Date.now(),
+    habit, 
+    completed: false
+  };
+
+  onAddHabit(newHabit);
+  setHabitName("")
   
   return (
     //TODO: add a form to add a new habit

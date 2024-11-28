@@ -7,20 +7,14 @@ function App() {
 
   const handleAddHabit = (habitName) => {
     // TODO: write code to add a new habit here
-    const newHabit = {
-      id: Date.now(),
-      name: habitName,
-      completed: false
-    };
-    setHabits((prevHabits) => [newHabit, ...prevHabits])
+    setHabits([...habit, newHabit])
   };
 
   const handleToggleHabit = (id) => {
     // TODO: write code to toggle a habit's status
-    setHabits((prevHabits) =>
-      prevHabits.map((habit) =>
-      habit.id === id ? {...habit, completed: !habit.completed } : habit
-      )
+    setHabits(
+      items.map((habit) =>
+      habit.id === id ? {...item, completed: !habit.completed} : habit)
     );
   };
 
